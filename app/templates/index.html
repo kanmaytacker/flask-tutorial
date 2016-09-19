@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	{% if title %} 
-	<title>{{ title }} - Flask Tutorial</title>
-	{% else %}
-	<title>Welcome to Flask Tutorial</title>
-	{% endif %}
-</head>
-<body>
+{% extends "base.html"%}
+{% block content %}
 	{% if user and user.nickname %}
 	<h1>Hello, {{ user.nickname}}</h1>
 	{% else %}
@@ -21,5 +13,4 @@
 		</p>
 	</div>
 	{% endfor %}
-</body>
-</html>
+{% endblock%}
