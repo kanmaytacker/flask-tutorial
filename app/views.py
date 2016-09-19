@@ -8,4 +8,15 @@ def main():
 @app.route('/index')
 def index():
 	user = {'nickname' : 'BlueTrainColtrane'}
-	return render_template('index.html', title = 'Home', user = user)
+	posts = [
+		{
+			'author' : {'nickname' : 'Mr. T'},
+			'body' : 'You is a pity fool!'
+		},
+		{
+			'author' : {'nickname' : 'Plant'},
+			'body'	: 'Let me introduce to Led Zepellin'
+		}
+	]
+	return render_template('index.html',title = 'Blog', user = user,
+	 posts = posts)

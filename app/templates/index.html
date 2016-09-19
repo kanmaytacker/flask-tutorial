@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+	{% if title %} 
 	<title>{{ title }} - Flask Tutorial</title>
+	{% else %}
+	<title>Welcome to Flask Tutorial</title>
+	{% endif %}
 </head>
 <body>
+	{% if user and user.nickname %}
 	<h1>Hello, {{ user.nickname}}</h1>
+	{% else %}
+	<h1>Hello, random person.</h1>
+	{% endif %}
+
+	{% for post in posts %}
+	<div>
+		<p>
+			{{ post.author.nickname }} says <b> {{ post.body }} </b>
+		</p>
+	</div>
+	{% endfor %}
 </body>
 </html>
